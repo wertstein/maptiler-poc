@@ -1,0 +1,43 @@
+<mgl-map
+  [style]="
+    'https://api.maptiler.com/maps/outdoor/style.json?key=QSYSDxrNZoT9kZ7dXfnm'
+  "
+  [zoom]="[9]"
+  [center]="[34, 45]"
+>
+  <mgl-marker *ngFor="let marker of markers$ | async" [lngLat]="marker.lngLat">
+    <div class="bg-slate-700 font-bold">Hello</div>
+  </mgl-marker>
+
+  <mgl-marker #myMarker [lngLat]="[35, 45]">
+    <div class="bg-slate-700 font-bold">Hello</div>
+  </mgl-marker>
+
+  <mgl-popup [marker]="myMarker"> Hello from marker ! </mgl-popup>
+
+  <mgl-control position="top-left">
+    <div class="etr-icon">S</div>
+  </mgl-control>
+  <mgl-control position="top-left">
+    <div class="etr-icon">L</div>
+  </mgl-control>
+  <mgl-control position="top-left">
+    <div class="etr-icon">F</div>
+  </mgl-control>
+  <mgl-control position="top-left">
+    <div class="etr-watermark">WATERMARK</div>
+  </mgl-control>
+
+  <mgl-control position="top-right">
+    <div class="etr-icon">S</div>
+  </mgl-control>
+  <mgl-control position="top-right">
+    <div class="etr-icon">I</div>
+  </mgl-control>
+
+  <mgl-control mglNavigation position="bottom-right"></mgl-control>
+  <mgl-control mglFullscreen position="bottom-right"></mgl-control>
+
+  <mgl-control mglScale unit="imperial" position="bottom-left"></mgl-control>
+  <mgl-control mglScale unit="metric" position="bottom-left"></mgl-control>
+</mgl-map>
