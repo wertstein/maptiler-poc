@@ -15,6 +15,7 @@ import {
   ScaleControl,
 } from 'maplibre-gl';
 import { API_KEY } from 'src/app/constants';
+import { GeocodingControl } from '@maptiler/geocoding-control/maptilersdk';
 
 import * as maptilersdk from '@maptiler/sdk';
 
@@ -91,6 +92,10 @@ export class CustomNgMapTileComponent
         new maptilersdk.FullscreenControl(),
         'top-right'
       );
+
+      const gc = new GeocodingControl();
+
+      this.mapTiler.addControl(gc as any, 'top-left');
     }
   }
 

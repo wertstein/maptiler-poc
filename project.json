@@ -16,7 +16,11 @@
         "polyfills": ["zone.js"],
         "tsConfig": "./tsconfig.app.json",
         "assets": ["./src/favicon.ico", "./src/assets"],
-        "styles": ["./src/styles.scss"],
+        "styles": [
+          "./src/styles.scss",
+          "./node_modules/@maptiler/sdk/dist/maptiler-sdk.css",
+          "./node_modules/@maptiler/geocoding-control/style.css"
+        ],
         "scripts": []
       },
       "configurations": {

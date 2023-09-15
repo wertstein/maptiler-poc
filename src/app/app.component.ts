@@ -12,3 +12,14 @@ import { NxWelcomeComponent } from './nx-welcome.component';
 export class AppComponent {
   title = 'maptiler-poc';
 }
+
+/** To investigate
+ * Controls +
+ * Spatial illusions
+ * Elevations
+ * Coordinates
+ * Search +
+ * Layers
+ * Instruments (Ruler)
+ * 3D map +
+ */

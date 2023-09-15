@@ -33,15 +33,4 @@ export class MapTileComponent {
   readonly markers$ = of(MARKERS);
 
   readonly layer = `https://api.maptiler.com/maps/topo-v2/style.json?key=${API_KEY}`;
-
-  /**
-   * Controls
-   * Spatial illusions
-   * Elevations
-   * Coordinates
-   * Search
-   * Layers
-   * Ruler
-   * 3D map
-   */
 }

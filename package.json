@@ -18,6 +18,7 @@
     "@angular/platform-browser-dynamic": "~16.2.0",
     "@angular/router": "~16.2.0",
     "@maplibre/ngx-maplibre-gl": "^16.0.0",
+    "@maptiler/geocoding-control": "^0.0.99",
     "@maptiler/sdk": "^1.1.2",
     "@nx/angular": "16.8.1",
     "maplibre-gl": "^3.3.1",
