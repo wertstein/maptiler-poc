@@ -81,6 +81,10 @@ export class CustomNgMapTileComponent
         terrainControl: true,
       });
 
+      const gc = new GeocodingControl();
+
+      this.mapTiler.addControl(gc as any, 'top-right');
+
       (['imperial', 'metric'] as maptilersdk.Unit[]).forEach((unit) => {
         this.mapTiler?.addControl(
           new maptilersdk.ScaleControl({ unit }),
@@ -92,10 +96,6 @@ export class CustomNgMapTileComponent
         new maptilersdk.FullscreenControl(),
         'top-right'
       );
-
-      const gc = new GeocodingControl();
-
-      this.mapTiler.addControl(gc as any, 'top-left');
     }
   }
 
