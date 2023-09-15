@@ -5,6 +5,14 @@ mgl-map {
 
 .etr {
   &-icon {
+    border-radius: 50%;
+    border: 1px solid gray;
+    background-color: salmon;
+    height: 30px;
+    width: 30px;
+  }
+
+  &-control-icon {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,5 +36,6 @@ mgl-map {
     padding: 10px;
     font-size: 12px;
     color: gray;
+    opacity: 0.5;
   }
 }

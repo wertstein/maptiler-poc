@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgxMapLibreGLModule } from '@maplibre/ngx-maplibre-gl';
-import * as maptilersdk from '@maptiler/sdk';
 import { of } from 'rxjs';
 import { LngLatLike } from 'maplibre-gl';
 
@@ -20,6 +19,8 @@ const MARKERS: { lngLat: LngLatLike }[] = [
   },
 ];
 
+const API_KEY = 'QSYSDxrNZoT9kZ7dXfnm';
+
 @Component({
   selector: 'app-map-tile',
   standalone: true,
@@ -28,21 +29,17 @@ const MARKERS: { lngLat: LngLatLike }[] = [
   styleUrls: ['./map-tile.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MapTileComponent implements OnInit {
-  API_KEY = 'QSYSDxrNZoT9kZ7dXfnm';
-
+export class MapTileComponent {
   readonly markers$ = of(MARKERS);
 
-  ngOnInit(): void {
-    maptilersdk.config.apiKey = 'YOUR_MAPTILER_API_KEY_HERE';
-  }
-}
+  readonly layer = `https://api.maptiler.com/maps/topo-v2/style.json?key=${API_KEY}`;
 
-/**
- * Controls
- * Spatial illusions
- * Elevations
- * Layers
- * Ruler
- * 3D map
- */
+  /**
+   * Controls
+   * Spatial illusions
+   * Elevations
+   * Layers
+   * Ruler
+   * 3D map
+   */
+}

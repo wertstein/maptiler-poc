@@ -1,38 +1,40 @@
 <mgl-map
-  [style]="
-    'https://api.maptiler.com/maps/outdoor/style.json?key=QSYSDxrNZoT9kZ7dXfnm'
-  "
+  [style]="layer"
   [zoom]="[9]"
   [center]="[34, 45]"
+  [renderWorldCopies]="false"
 >
+  <!-- markers -->
   <mgl-marker *ngFor="let marker of markers$ | async" [lngLat]="marker.lngLat">
-    <div class="bg-slate-700 font-bold">Hello</div>
+    <div class="etr-icon"></div>
   </mgl-marker>
 
+  <!-- popup -->
   <mgl-marker #myMarker [lngLat]="[35, 45]">
-    <div class="bg-slate-700 font-bold">Hello</div>
+    <div class="etr-icon"></div>
   </mgl-marker>
 
   <mgl-popup [marker]="myMarker"> Hello from marker ! </mgl-popup>
 
+  <!-- controls -->
   <mgl-control position="top-left">
-    <div class="etr-icon">S</div>
+    <div class="etr-control-icon">S</div>
   </mgl-control>
   <mgl-control position="top-left">
-    <div class="etr-icon">L</div>
+    <div class="etr-control-icon">L</div>
   </mgl-control>
   <mgl-control position="top-left">
-    <div class="etr-icon">F</div>
+    <div class="etr-control-icon">F</div>
   </mgl-control>
   <mgl-control position="top-left">
     <div class="etr-watermark">WATERMARK</div>
   </mgl-control>
 
   <mgl-control position="top-right">
-    <div class="etr-icon">S</div>
+    <div class="etr-control-icon">S</div>
   </mgl-control>
   <mgl-control position="top-right">
-    <div class="etr-icon">I</div>
+    <div class="etr-control-icon">I</div>
   </mgl-control>
 
   <mgl-control mglNavigation position="bottom-right"></mgl-control>
