@@ -38,6 +38,8 @@ export class MapTileComponent {
    * Controls
    * Spatial illusions
    * Elevations
+   * Coordinates
+   * Search
    * Layers
    * Ruler
    * 3D map
