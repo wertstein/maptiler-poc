@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NgxMapLibreGLModule } from '@maplibre/ngx-maplibre-gl';
 import { of } from 'rxjs';
 import { LngLatLike } from 'maplibre-gl';
+import { API_KEY } from 'src/app/constants';
 
 const MARKERS: { lngLat: LngLatLike }[] = [
   {
@@ -18,8 +19,6 @@ const MARKERS: { lngLat: LngLatLike }[] = [
     lngLat: [34, 45.3],
   },
 ];
-
-const API_KEY = 'QSYSDxrNZoT9kZ7dXfnm';
 
 @Component({
   selector: 'app-map-tile',
