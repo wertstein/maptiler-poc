@@ -39,6 +39,7 @@ export class CustomNgMapTileComponent implements AfterViewInit, OnDestroy {
     const initialState = { lng: 34, lat: 45, zoom: 9 };
     if (0) {
       // Map libre SDK
+
       this.mapLibre = new Map({
         container: this.mapLibreContainer.nativeElement,
         style: `https://api.maptiler.com/maps/streets-v2/style.json?key=${API_KEY}`,
