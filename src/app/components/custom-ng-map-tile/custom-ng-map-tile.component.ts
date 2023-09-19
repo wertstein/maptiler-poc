@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import {
   Component,
-  OnInit,
   ViewChild,
   ElementRef,
   AfterViewInit,
@@ -16,7 +15,6 @@ import {
 } from 'maplibre-gl';
 import { API_KEY } from 'src/app/constants';
 import { GeocodingControl } from '@maptiler/geocoding-control/maptilersdk';
-
 import * as maptilersdk from '@maptiler/sdk';
 
 @Component({
@@ -26,9 +24,7 @@ import * as maptilersdk from '@maptiler/sdk';
   templateUrl: './custom-ng-map-tile.component.html',
   styleUrls: ['./custom-ng-map-tile.component.scss'],
 })
-export class CustomNgMapTileComponent
-  implements OnInit, AfterViewInit, OnDestroy
-{
+export class CustomNgMapTileComponent implements AfterViewInit, OnDestroy {
   mapLibre: Map | undefined;
 
   mapTiler: maptilersdk.Map | undefined;
@@ -39,13 +35,10 @@ export class CustomNgMapTileComponent
   @ViewChild('mapTiler')
   private mapTilerContainer!: ElementRef<HTMLElement>;
 
-  ngOnInit(): void {
-    //
-  }
-
   ngAfterViewInit() {
     const initialState = { lng: 34, lat: 45, zoom: 9 };
     if (0) {
+      // Map libre SDK
       this.mapLibre = new Map({
         container: this.mapLibreContainer.nativeElement,
         style: `https://api.maptiler.com/maps/streets-v2/style.json?key=${API_KEY}`,
@@ -96,6 +89,10 @@ export class CustomNgMapTileComponent
         new maptilersdk.FullscreenControl(),
         'top-right'
       );
+
+      new maptilersdk.Marker()
+        .setLngLat([initialState.lng, initialState.lat])
+        .addTo(this.mapTiler);
     }
   }
 
